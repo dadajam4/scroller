@@ -1,6 +1,6 @@
 {
   "name": "@dadajam4/scroller",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Service for DOM Element Scroll.",
   "main": "dist/scroller.umd.js",
   "module": "dist/scroller.esm.js",
@@ -61,7 +61,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "@dadajam4/ev": "^0.1.0",
+    "@dadajam4/ev": "^0.2.0",
     "@dadajam4/visibility": "^1.0.0"
   }
 }
