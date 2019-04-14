@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>demo | scroller</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+      }
+
+      button {
+        background: #fa0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      このデモではRootのElement(document.scrollingElement)に対して横スクロールを発生させていません。
+      <br />モバイル端末では自動的にviewportが変更されるため、demoに相応しくないためです。
+    </p>
+    <div style="background: #f00;">dummy box</div>
+    <p>This is dummy text...</p>
+    <p>jump test. <a class="bottom-test" href="#">to bottom</a></p>
+    <p>jump test. <a class="top-test" href="#">to top</a></p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>jump test. <a class="anchor-test" href="#anchor1">#anchor1</a></p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <div style="height: 300px; padding: 100px; background: #f00;">
+      <div style="background: #00f; height: 100px;" id="anchor1">#anchor1</div>
+    </div>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <div
+      id="inner"
+      style="position: relative; width: 300px; height: 480px; overflow: hidden; box-sizing: border-box;"
+    >
+      <div
+        id="innerScroller"
+        style="position: relative; width: 100%; height: 100%; overflow: auto; box-sizing: border-box; background: #eee;"
+      >
+        <div style="width: 400px; background: #f00;">width: 400px;</div>
+        <p>This is dummy text...</p>
+        <p>
+          jump test. <a class="inner-bottom-test" href="#">to right - bottom</a>
+        </p>
+        <p>jump test. <a class="inner-top-test" href="#">to left - top</a></p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>
+          jump test.
+          <a class="inner-anchor-test" href="#inner-anchor1">#inner-anchor1</a>
+        </p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <div
+          style="width: 400px; height: 300px; padding: 100px; background: #f00;"
+        >
+          <div style="background: #00f; height: 100px;" id="inner-anchor1">
+            #inner-anchor1
+          </div>
+        </div>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>This is dummy text...</p>
+        <p>jump test. <a class="inner-top-test" href="#">to left - top</a></p>
+        <p>
+          jump test. <a class="inner-bottom-test" href="#">to right - bottom</a>
+        </p>
+        <p>This is dummy text...</p>
+        <p>
+          jump test.
+          <a class="inner-anchor-test" href="#inner-anchor2">#inner-anchor2</a>
+        </p>
+        <p>This is dummy text...</p>
+        <div id="inner-anchor2">#anchor2</div>
+      </div>
+    </div>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>This is dummy text...</p>
+    <p>jump test. <a class="top-test" href="#">to top</a></p>
+    <p>jump test. <a class="bottom-test" href="#">to bottom</a></p>
+    <p>This is dummy text...</p>
+    <p>jump test. <a class="anchor-test" href="#anchor2">#anchor2</a></p>
+    <p>This is dummy text...</p>
+    <div id="anchor2">#anchor2</div>
+  </body>
+</html>

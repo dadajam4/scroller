@@ -1,0 +1,9 @@
+{
+  "source": "./src",
+  "excludes": ["(node_modules|bower_components)"],
+  "destination": "./doc",
+  "plugins": [
+    { "name": "esdoc-standard-plugin" },
+    { "name": "esdoc-typescript-plugin" }
+  ]
+}
