@@ -302,6 +302,7 @@ export default function scroll(
     timeStart = 0;
     off($container, abortEvents, abortFn);
     callbackValues.progress = 1;
+    doneResolve();
     if (!callbackValues.aborted && onDone) onDone(callbackValues);
   }
 }
