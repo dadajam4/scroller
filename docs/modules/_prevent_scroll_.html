@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util&quot; | @dadajam4/scroller</title>
+	<title>&quot;prevent-scroll&quot; | @dadajam4/scroller</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_.html">&quot;util&quot;</a>
+					<a href="_prevent_scroll_.html">&quot;prevent-scroll&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util&quot;</h1>
+			<h1>External module &quot;prevent-scroll&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,19 +69,28 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_prevent_scroll_.preventscrollcontext.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Context</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_prevent_scroll_.preventscrollelement.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Element</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_prevent_scroll_.preventscrolloptions.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_util_.html#has_window" class="tsd-kind-icon">HAS_<wbr>WINDOW</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_prevent_scroll_.html#scrollable_key_codes" class="tsd-kind-icon">SCROLLABLE_<wbr>KEY_<wbr>CODES</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_prevent_scroll_.html#eventlisteneroptions" class="tsd-kind-icon">event<wbr>Listener<wbr>Options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_.html#isbodyelement" class="tsd-kind-icon">is<wbr>Body<wbr>Element</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_.html#isdocumentelement" class="tsd-kind-icon">is<wbr>Document<wbr>Element</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_.html#isrootelement" class="tsd-kind-icon">is<wbr>Root<wbr>Element</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_.html#warn" class="tsd-kind-icon">warn</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_prevent_scroll_.html#disablescroll" class="tsd-kind-icon">disable<wbr>Scroll</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_prevent_scroll_.html#enablescroll" class="tsd-kind-icon">enable<wbr>Scroll</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_prevent_scroll_.html#handlekeydown" class="tsd-kind-icon">handle<wbr>Keydown</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_prevent_scroll_.html#handlescroll" class="tsd-kind-icon">handle<wbr>Scroll</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_prevent_scroll_.html#handlewheel" class="tsd-kind-icon">handle<wbr>Wheel</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,12 +99,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="has_window" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> HAS_<wbr>WINDOW</h3>
-					<div class="tsd-signature tsd-kind-icon">HAS_<wbr>WINDOW<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;typeof window !&#x3D;&#x3D; &#x27;undefined&#x27;</span></div>
+					<a name="scrollable_key_codes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> SCROLLABLE_<wbr>KEY_<wbr>CODES</h3>
+					<div class="tsd-signature tsd-kind-icon">SCROLLABLE_<wbr>KEY_<wbr>CODES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[32, 33, 34, 35, 36, 37, 38, 39, 40]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L1">util.ts:1</a></li>
+							<li>Defined in prevent-scroll.ts:5</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="eventlisteneroptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> event<wbr>Listener<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Listener<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AddEventListenerOptions</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;SUPPORTS_PASSIVE ? {passive: false,} : false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in prevent-scroll.ts:26</li>
 						</ul>
 					</aside>
 				</section>
@@ -103,39 +122,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>error</h3>
+					<a name="disablescroll" class="tsd-anchor"></a>
+					<h3>disable<wbr>Scroll</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></li>
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Scroll<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span>, opts<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_prevent_scroll_.preventscrolloptions.html" class="tsd-signature-type">PreventScrollOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L9">util.ts:9</a></li>
+									<li>Defined in prevent-scroll.ts:66</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<h5>el: <span class="tsd-signature-type">Element</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_prevent_scroll_.preventscrolloptions.html" class="tsd-signature-type">PreventScrollOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Error</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="isbodyelement" class="tsd-anchor"></a>
-					<h3>is<wbr>Body<wbr>Element</h3>
+					<a name="enablescroll" class="tsd-anchor"></a>
+					<h3>enable<wbr>Scroll</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Body<wbr>Element<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Scroll<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L17">util.ts:17</a></li>
+									<li>Defined in prevent-scroll.ts:50</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -144,73 +166,73 @@
 									<h5>el: <span class="tsd-signature-type">Element</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="isdocumentelement" class="tsd-anchor"></a>
-					<h3>is<wbr>Document<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Document<wbr>Element<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="handlekeydown" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> handle<wbr>Keydown</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Keydown<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KeyboardEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L13">util.ts:13</a></li>
+									<li>Defined in prevent-scroll.ts:41</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>el: <span class="tsd-signature-type">Element</span></h5>
+									<h5>e: <span class="tsd-signature-type">KeyboardEvent</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="isrootelement" class="tsd-anchor"></a>
-					<h3>is<wbr>Root<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Root<wbr>Element<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="handlescroll" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> handle<wbr>Scroll</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Scroll<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L21">util.ts:21</a></li>
+									<li>Defined in prevent-scroll.ts:34</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>el: <span class="tsd-signature-type">Element</span></h5>
+									<h5>e: <span class="tsd-signature-type">Event</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="warn" class="tsd-anchor"></a>
-					<h3>warn</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="handlewheel" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> handle<wbr>Wheel</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Wheel<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WheelEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/util.ts#L3">util.ts:3</a></li>
+									<li>Defined in prevent-scroll.ts:30</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<h5>e: <span class="tsd-signature-type">WheelEvent</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -228,7 +250,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_polyfills_.html">"polyfills"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_prevent_scroll_.html">"prevent-<wbr>scroll"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -258,30 +280,42 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_scroller_.html">"scroller"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_util_.html">"util"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_prevent_scroll_.preventscrollcontext.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_prevent_scroll_.preventscrollelement.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_prevent_scroll_.preventscrolloptions.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_util_.html#has_window" class="tsd-kind-icon">HAS_<wbr>WINDOW</a>
+						<a href="_prevent_scroll_.html#scrollable_key_codes" class="tsd-kind-icon">SCROLLABLE_<wbr>KEY_<wbr>CODES</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_prevent_scroll_.html#eventlisteneroptions" class="tsd-kind-icon">event<wbr>Listener<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_.html#error" class="tsd-kind-icon">error</a>
+						<a href="_prevent_scroll_.html#disablescroll" class="tsd-kind-icon">disable<wbr>Scroll</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_.html#isbodyelement" class="tsd-kind-icon">is<wbr>Body<wbr>Element</a>
+						<a href="_prevent_scroll_.html#enablescroll" class="tsd-kind-icon">enable<wbr>Scroll</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_.html#isdocumentelement" class="tsd-kind-icon">is<wbr>Document<wbr>Element</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_prevent_scroll_.html#handlekeydown" class="tsd-kind-icon">handle<wbr>Keydown</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_.html#isrootelement" class="tsd-kind-icon">is<wbr>Root<wbr>Element</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_prevent_scroll_.html#handlescroll" class="tsd-kind-icon">handle<wbr>Scroll</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_.html#warn" class="tsd-kind-icon">warn</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_prevent_scroll_.html#handlewheel" class="tsd-kind-icon">handle<wbr>Wheel</a>
 					</li>
 				</ul>
 			</nav>

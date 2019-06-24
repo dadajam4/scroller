@@ -23,20 +23,3 @@ export function isRootElement(
 ): el is HTMLHtmlElement | HTMLBodyElement {
   return isDocumentElement(el) || isBodyElement(el);
 }
-
-export const NO_SCROLL_ATTRIBUTE = 'data-dd-no-scroll';
-
-let noscrollStyle: HTMLStyleElement;
-if (HAS_WINDOW) {
-  noscrollStyle = document.createElement('style');
-  noscrollStyle.innerText = `[${NO_SCROLL_ATTRIBUTE}]{overflow: hidden!important;}`;
-  document.getElementsByTagName('head')[0].appendChild(noscrollStyle);
-}
-
-export function enableScroll(el: Element) {
-  (el as HTMLElement).removeAttribute(NO_SCROLL_ATTRIBUTE);
-}
-
-export function disableScroll(el: Element) {
-  (el as HTMLElement).setAttribute(NO_SCROLL_ATTRIBUTE, '');
-}

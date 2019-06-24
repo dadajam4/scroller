@@ -5,10 +5,16 @@ import {
   HAS_WINDOW,
   isDocumentElement,
   isBodyElement,
-  enableScroll,
-  disableScroll,
   error,
 } from './util';
+
+import {
+  enableScroll,
+  disableScroll,
+} from './prevent-scroll';
+
+export * from './prevent-scroll';
+
 import {
   ScrollPosition,
   ScrollOptions,
@@ -82,7 +88,7 @@ export interface ScrollSizeOvserverSetting {
  * 個々のフィールドの詳細は[[Scroller]]の同名プロパティを参照してください。
  */
 export interface ScrollerSetting {
-  el: Element | string;
+  el: Element | string | null;
   scrollingJudgeInterval: number;
   baseAxis: ScrollAxis;
   scrollSizeOvserver: Partial<ScrollSizeOvserverSetting>;
@@ -360,7 +366,7 @@ class Scroller extends EV<ScrollerEventMap> {
    * 設定されたElement要素です。
    * 初期化が完了していない時には本getterはundefinedを返却する事に注意してください。
    */
-  get el(): Element {
+  get el() {
     return this._el;
   }
 
@@ -565,7 +571,7 @@ class Scroller extends EV<ScrollerEventMap> {
     };
   }
 
-  private _el!: Element;
+  private _el!: Element | null;
   private _eventTarget!: ScrollerEventTarget;
   private _isDocumentElement: boolean = false;
   private _isBodyElement: boolean = false;
@@ -618,6 +624,7 @@ class Scroller extends EV<ScrollerEventMap> {
 
     const convertedSetting: Partial<ScrollerSetting> =
       typeof settingOrElementOrQueryString === 'string' ||
+      settingOrElementOrQueryString === null ||
       (HAS_WINDOW && settingOrElementOrQueryString instanceof Element)
         ? (settingOrElementOrQueryString = {
             el: <Element | string>settingOrElementOrQueryString,
@@ -670,9 +677,10 @@ class Scroller extends EV<ScrollerEventMap> {
    * 本メソッドを利用しブラウザコンテキスト配下で本メソッドを実行してください。
    * @param el Element、もしくはCSSクエリセレクタ文字列を指定します。
    */
-  setElement(el?: Element | string) {
+  setElement(el?: Element | string | null) {
+    if (el === null) return;
     if (!HAS_WINDOW)
-      error('Element can be set only when it is under DOM contest.');
+      error('Element can be set only when it is under DOM context.');
 
     this.stop();
 
@@ -772,7 +780,7 @@ class Scroller extends EV<ScrollerEventMap> {
   toJSON(): ScrollerObserver {
     const json: Partial<ScrollerObserver> = {};
     for (const key of scrollerObservableKeys) {
-      json[key] = this[key];
+      json[key] = this[key] as any;
     }
     return <ScrollerObserver>json;
   }
@@ -1049,15 +1057,20 @@ class Scroller extends EV<ScrollerEventMap> {
   }
 
   private _updateContainerSize(
-    width: number = this._isBodyElement
-      ? // ? window.innerWidth
-        (document.documentElement as HTMLElement).clientWidth
-      : this.el.clientWidth,
-    height: number = this._isBodyElement
-      ? // ? window.innerHeight
-        (document.documentElement as HTMLElement).clientHeight
-      : this.el.clientHeight,
+    width?: number,
+    height?: number,
   ): void {
+    const { el, _isBodyElement } = this;
+    if (width === undefined) {
+      if (!el) return;
+      width = _isBodyElement ? (document.documentElement as HTMLElement).clientWidth : el.clientWidth;
+    }
+
+    if (height === undefined) {
+      if (!el) return;
+      height = _isBodyElement ? (document.documentElement as HTMLElement).clientHeight : el.clientHeight;
+    }
+
     const { _containerWidth, _containerHeight } = this;
     this._containerWidth = width;
     this._containerHeight = height;
@@ -1073,9 +1086,10 @@ class Scroller extends EV<ScrollerEventMap> {
   }
 
   private _updateScrollSize(): void {
-    const { _scrollWidth, _scrollHeight } = this;
-    this._scrollWidth = this.el.scrollWidth;
-    this._scrollHeight = this.el.scrollHeight;
+    const { el, _scrollWidth, _scrollHeight } = this;
+    if (!el) return;
+    this._scrollWidth = el.scrollWidth;
+    this._scrollHeight = el.scrollHeight;
     if (
       _scrollWidth !== this._scrollWidth ||
       _scrollHeight !== this._scrollHeight
@@ -1114,6 +1128,7 @@ class Scroller extends EV<ScrollerEventMap> {
   }
 
   private _updateScrollPositions(): void {
+    if (!this.el) return;
     this._scrollTop = this.el.scrollTop;
     this._scrollLeft = this.el.scrollLeft;
 
@@ -1151,7 +1166,7 @@ class Scroller extends EV<ScrollerEventMap> {
           this._onResize(width, height);
         }
       });
-      this._resizeObserver.observe(this._el);
+      this._el && this._resizeObserver.observe(this._el);
     }
 
     if (visibilityManager.isVisible) {
@@ -1179,7 +1194,7 @@ class Scroller extends EV<ScrollerEventMap> {
       }
     }
 
-    if (this._resizeObserver) {
+    if (this._resizeObserver && this._el) {
       this._resizeObserver.unobserve(this._el);
       this._resizeObserver.disconnect();
       delete this._resizeObserver;
@@ -1217,7 +1232,7 @@ class Scroller extends EV<ScrollerEventMap> {
   }
 
   private _onScroll() {
-    if (!this.scrollEnabled) {
+    if (!this.scrollEnabled && this._el) {
       this._el.scrollLeft = this._scrollLeft;
       this._el.scrollTop = this._scrollTop;
       return;
@@ -1334,7 +1349,7 @@ class Scroller extends EV<ScrollerEventMap> {
     keys: ScrollerObservableKeys[] = scrollerObservableKeys,
   ) {
     for (const key of keys) {
-      observer[key] = this[key];
+      (observer as any)[key] = this[key];
     }
   }
 
@@ -1351,6 +1366,7 @@ class Scroller extends EV<ScrollerEventMap> {
   private _createMergedScrollOptions(
     source?: ScrollerScrollOptions,
   ): ScrollOptions {
+    if (!this._el) throw error('missing element');
     const merged: ScrollOptions = {
       container: this._el,
       ...this.scrollSettingsDefaults,
@@ -1362,6 +1378,7 @@ class Scroller extends EV<ScrollerEventMap> {
   private _createMergedScrollToElementOptions(
     source?: ScrollerScrollToElementOptions,
   ): ScrollToElementOptions {
+    if (!this._el) throw error('missing element');
     const merged: ScrollToElementOptions = {
       container: this._el,
       ...this.scrollToElementSettingsDefaults,
@@ -1391,10 +1408,12 @@ class Scroller extends EV<ScrollerEventMap> {
     }
   }
   private _scrollEnable() {
+    if (!this._el) throw error('missing element');
     enableScroll(this._el);
   }
 
   private _scrollDisable() {
+    if (!this._el) throw error('missing element');
     this.cancel();
     disableScroll(this._el);
   }

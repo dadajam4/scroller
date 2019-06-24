@@ -8,7 +8,9 @@ import {
   HTMLElementEventMapKey,
   error,
 } from './util';
-import { NO_SCROLL_ATTRIBUTE } from '../util';
+import {
+  PreventScrollElement,
+} from '../prevent-scroll';
 
 /**
  * スクロール系メソッドの基本オプション設定です。
@@ -229,7 +231,7 @@ export default function scroll(
   //
   if (
     (diffY === 0 && diffX === 0) ||
-    $container.getAttribute(NO_SCROLL_ATTRIBUTE) !== null
+    !!($container as PreventScrollElement).__ps_ctx__
   )
     return initialAbort();
 

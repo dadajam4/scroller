@@ -10,7 +10,7 @@ try {
   (window as any).removeEventListener('test', null, opts);
 } catch (e) {}
 
-export const SUPPORTS_PASSIVE = _supportsPassive;
+export const SUPPORTS_PASSIVE: boolean = _supportsPassive;
 
 export function isBodyElement(el: Element): el is HTMLBodyElement {
   return el.tagName.toLowerCase() === 'body';

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;scroll/scroll-to&quot; | @dadajam4/scroller</title>
+	<title>PreventScrollContext | @dadajam4/scroller</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,66 +54,95 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_scroll_scroll_to_.html">&quot;scroll/scroll-to&quot;</a>
+					<a href="../modules/_prevent_scroll_.html">&quot;prevent-scroll&quot;</a>
+				</li>
+				<li>
+					<a href="_prevent_scroll_.preventscrollcontext.html">PreventScrollContext</a>
 				</li>
 			</ul>
-			<h1>External module &quot;scroll/scroll-to&quot;</h1>
+			<h1>Interface PreventScrollContext</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">PreventScrollContext</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_scroll_scroll_to_.html#scrollto" class="tsd-kind-icon">scroll<wbr>To</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_prevent_scroll_.preventscrollcontext.html#el" class="tsd-kind-icon">el</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_prevent_scroll_.preventscrollcontext.html#lockposition" class="tsd-kind-icon">lock<wbr>Position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_prevent_scroll_.preventscrollcontext.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_prevent_scroll_.preventscrollcontext.html#overfloworigin" class="tsd-kind-icon">overflow<wbr>Origin</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="scrollto" class="tsd-anchor"></a>
-					<h3>scroll<wbr>To</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">scroll<wbr>To<span class="tsd-signature-symbol">(</span>scrollPosition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_scroll_scroll_by_internal_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><a href="_scroll_scroll_by_internal_.html#scrolloptions" class="tsd-signature-type">ScrollOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_scroll_scroll_by_internal_.scrollresult.html" class="tsd-signature-type">ScrollResult</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dadajam4/scroller/blob/f94de58/src/scroll/scroll-to.ts#L13">scroll/scroll-to.ts:13</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>任意の位置（px）へコンテナをスクロールします。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>scrollPosition: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_scroll_scroll_by_internal_.scrollposition.html" class="tsd-signature-type">ScrollPosition</a><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>スクロール先を指定します。x, y 共にオプショナルなるです。未指定の軸は現在のスクロール値のまま保持されます。</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="_scroll_scroll_by_internal_.html#scrolloptions" class="tsd-signature-type">ScrollOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_scroll_scroll_by_internal_.scrollresult.html" class="tsd-signature-type">ScrollResult</a></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="el" class="tsd-anchor"></a>
+					<h3>el</h3>
+					<div class="tsd-signature tsd-kind-icon">el<span class="tsd-signature-symbol">:</span> <a href="_prevent_scroll_.preventscrollelement.html" class="tsd-signature-type">PreventScrollElement</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in prevent-scroll.ts:14</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="lockposition" class="tsd-anchor"></a>
+					<h3>lock<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">lock<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in prevent-scroll.ts:16</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="_prevent_scroll_.preventscrolloptions.html" class="tsd-signature-type">PreventScrollOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in prevent-scroll.ts:13</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="overfloworigin" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> overflow<wbr>Origin</h3>
+					<div class="tsd-signature tsd-kind-icon">overflow<wbr>Origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in prevent-scroll.ts:15</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -124,47 +153,92 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_polyfills_.html">"polyfills"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_prevent_scroll_.html">"prevent-<wbr>scroll"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_scroll_easings_.html">"scroll/easings"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_scroll_index_.html">"scroll/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_scroll_scroll_by_.html">"scroll/scroll-<wbr>by"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_scroll_scroll_by_internal_.html">"scroll/scroll-<wbr>by-<wbr>internal"</a>
+						<a href="../modules/_polyfills_.html">"polyfills"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_scroll_scroll_to_.html">"scroll/scroll-<wbr>to"</a>
+						<a href="../modules/_prevent_scroll_.html">"prevent-<wbr>scroll"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_scroll_scroll_to_element_.html">"scroll/scroll-<wbr>to-<wbr>element"</a>
+						<a href="../modules/_scroll_easings_.html">"scroll/easings"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_scroll_scroll_to_side_.html">"scroll/scroll-<wbr>to-<wbr>side"</a>
+						<a href="../modules/_scroll_index_.html">"scroll/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_scroll_util_.html">"scroll/util"</a>
+						<a href="../modules/_scroll_scroll_by_.html">"scroll/scroll-<wbr>by"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_scroller_.html">"scroller"</a>
+						<a href="../modules/_scroll_scroll_by_internal_.html">"scroll/scroll-<wbr>by-<wbr>internal"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_util_.html">"util"</a>
+						<a href="../modules/_scroll_scroll_to_.html">"scroll/scroll-<wbr>to"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_scroll_scroll_to_element_.html">"scroll/scroll-<wbr>to-<wbr>element"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_scroll_scroll_to_side_.html">"scroll/scroll-<wbr>to-<wbr>side"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_scroll_util_.html">"scroll/util"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_scroller_.html">"scroller"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_util_.html">"util"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_prevent_scroll_.preventscrollcontext.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Context</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_prevent_scroll_.preventscrollcontext.html#el" class="tsd-kind-icon">el</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_prevent_scroll_.preventscrollcontext.html#lockposition" class="tsd-kind-icon">lock<wbr>Position</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_prevent_scroll_.preventscrollcontext.html#options" class="tsd-kind-icon">options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_prevent_scroll_.preventscrollcontext.html#overfloworigin" class="tsd-kind-icon">overflow<wbr>Origin</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_prevent_scroll_.preventscrollelement.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_prevent_scroll_.preventscrolloptions.html" class="tsd-kind-icon">Prevent<wbr>Scroll<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_prevent_scroll_.html#scrollable_key_codes" class="tsd-kind-icon">SCROLLABLE_<wbr>KEY_<wbr>CODES</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_prevent_scroll_.html#eventlisteneroptions" class="tsd-kind-icon">event<wbr>Listener<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_scroll_scroll_to_.html#scrollto" class="tsd-kind-icon">scroll<wbr>To</a>
+						<a href="../modules/_prevent_scroll_.html#disablescroll" class="tsd-kind-icon">disable<wbr>Scroll</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_prevent_scroll_.html#enablescroll" class="tsd-kind-icon">enable<wbr>Scroll</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_prevent_scroll_.html#handlekeydown" class="tsd-kind-icon">handle<wbr>Keydown</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_prevent_scroll_.html#handlescroll" class="tsd-kind-icon">handle<wbr>Scroll</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_prevent_scroll_.html#handlewheel" class="tsd-kind-icon">handle<wbr>Wheel</a>
 					</li>
 				</ul>
 			</nav>
